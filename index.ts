@@ -1,3 +1,4 @@
+import cors from "cors";
 import Server from "./Class/server";
 import { SERVER_PORT } from "./global/environment";
 import router from "./routes/router";
@@ -10,6 +11,10 @@ const server = new Server();
 //Siempre antes de la configuracion de las rutas (BodyParser)
 server.app.use(bodyParser.urlencoded({ extended: true }));
 server.app.use(bodyParser.json());
+
+
+//Siempre antes de llamar a los servicios o rutas(CORS)
+server.app.use(cors({ origin:true, credentials: true }));
 
 
 server.app.use('/', router)
