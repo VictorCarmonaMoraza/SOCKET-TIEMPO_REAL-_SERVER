@@ -1,9 +1,19 @@
-## Pasos para construir el servidor
+## Socket-Server
 
-## 1 Incializar nuestro proyecto
-npm init
 
-Este comando generara el fichero àckage.json
+Reconstruir modulos de Node
+```
+npm install
+```
 
-## 2 Instalamos express
-npm install express
+Generar el DIST
+```
+tsc -w
+```
+
+
+Levantar el servidor, cualquiera de estos dos comandos
+```
+nodemon dist/
+node dist/
+```
