@@ -1,10 +1,11 @@
 import Server from "./Class/server";
 import { SERVER_PORT } from "./global/environment";
+import  router  from "./routes/router";
 
  const server = new Server();
 
 
-
+server.app.use('/', router)
 
 server.star(()=>{
     //Opcion 1
