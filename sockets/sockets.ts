@@ -4,10 +4,18 @@ import { Socket } from 'socket.io';
 
 
 //Logica para desconectar un cliente
-export const desconectar = (cliente:Socket) => {
+export const desconectar = (cliente: Socket) => {
 
     //escuchamos el cliente
-    cliente.on('disconnect',()=>{
+    cliente.on('disconnect', () => {
         console.log('Cliente desconectado');
+    });
+}
+
+//Escuchar mensaje
+export const mensaje = (cliente: Socket) => {
+
+    cliente.on('mensaje', (payload: { de: string, cuerpo: string }) => {
+        console.log('Mensaje recibido', payload);
     });
 }
