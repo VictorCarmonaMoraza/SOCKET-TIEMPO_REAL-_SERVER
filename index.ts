@@ -6,7 +6,9 @@ import router from "./routes/router";
 import bodyParser from "body-parser";
 
 
-const server = new Server();
+//const server = new Server();
+const server = Server.instance;
+
 
 //Siempre antes de la configuracion de las rutas (BodyParser)
 server.app.use(bodyParser.urlencoded({ extended: true }));
